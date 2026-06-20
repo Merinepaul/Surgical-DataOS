@@ -1,25 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import "@/styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "SurgicalDataOS",
+    default: "SurgicalDataOS — Structured Representation of Cataract Surgical Knowledge",
     template: "%s | SurgicalDataOS",
   },
   description:
-    "The operating system for surgical intelligence — building high-quality cataract surgery datasets for robotic AI.",
+    "A framework for the structured representation of cataract surgical knowledge, supporting artificial intelligence, robotic surgery, simulation and research.",
 };
 
 export default function RootLayout({
@@ -30,11 +26,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
-      </body>
+      <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>
   );
 }

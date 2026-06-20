@@ -1,15 +1,25 @@
+import { Footer, HeroSection, Navbar } from "@/components";
+import { AboutSection } from "@/components/sections/about-section";
+import { ApplicationsSection } from "@/components/sections/applications-section";
+import { ContactSection } from "@/components/sections/contact-section";
+import { KnowledgeModelSection } from "@/components/sections/knowledge-model-section";
+import { ProblemSection } from "@/components/sections/problem-section";
+import { StandardsSection } from "@/components/sections/standards-section";
+
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <p className="text-sm font-medium uppercase tracking-widest text-zinc-500">
-        SurgicalDataOS
-      </p>
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-        Project foundation ready
-      </h1>
-      <p className="mt-3 max-w-md text-center text-zinc-600 dark:text-zinc-400">
-        Next.js 15 · TypeScript · Tailwind CSS · App Router
-      </p>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <KnowledgeModelSection />
+        <StandardsSection />
+        <ApplicationsSection />
+        <AboutSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
   );
 }
