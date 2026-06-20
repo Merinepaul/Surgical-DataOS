@@ -2,7 +2,7 @@ export const HOMEPAGE = {
   hero: {
     headline: "The Missing Knowledge Layer for Surgical AI",
     subheading:
-      "SurgicalDataOS converts operative video into structured computational knowledge for AI, robotics, simulation and research.",
+      "SurgicalDataOS converts surgical video into machine-understandable knowledge for AI, robotics and research.",
     primaryCta: { label: "Explore the Knowledge Model", href: "#knowledge-model" },
     secondaryCta: {
       label: "Watch 60-second Overview",

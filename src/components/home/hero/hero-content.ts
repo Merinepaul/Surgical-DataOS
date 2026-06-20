@@ -4,7 +4,7 @@ export const HERO = {
   // "Structured Knowledge for Computational Surgery"
   // "From Surgical Video to Machine-Readable Clinical Knowledge"
   subtext:
-    "SurgicalDataOS converts operative video into structured computational knowledge — a representation layer for AI systems, robotics, simulation and reproducible research.",
+    "SurgicalDataOS converts surgical video into machine-understandable knowledge for AI, robotics and research.",
   primaryCta: {
     label: "Explore the Knowledge Model",
     href: "#knowledge-model",
@@ -18,13 +18,5 @@ export const HERO = {
     "Knowledge Graph",
     "Open Standard",
     "Research Platform",
-  ],
-  pipeline: [
-    "Video",
-    "Observation",
-    "Knowledge Graph",
-    "Reasoning",
-    "Decision",
-    "Robot",
   ],
 } as const;
