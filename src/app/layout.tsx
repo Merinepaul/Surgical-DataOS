@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { JsonLd } from "@/components/layout/json-ld";
+import { SkipLink } from "@/components/layout/skip-link";
+import { absoluteUrl, siteConfig } from "@/lib/site";
+
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -10,12 +14,45 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "SurgicalDataOS — Structured Representation of Cataract Surgical Knowledge",
-    template: "%s | SurgicalDataOS",
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "A framework for the structured representation of cataract surgical knowledge, supporting artificial intelligence, robotic surgery, simulation and research.",
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.author.name }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: absoluteUrl("/"),
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
+  },
+  alternates: {
+    canonical: absoluteUrl("/"),
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +65,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-background text-foreground">{children}</body>
+      <body className="min-h-full bg-background text-foreground">
+        <JsonLd />
+        <SkipLink />
+        {children}
+      </body>
     </html>
   );
 }

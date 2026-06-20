@@ -1,17 +1,48 @@
-import { PAGE_MAX_WIDTH } from "@/lib/constants";
+import { NAV_LINKS, PAGE_MAX_WIDTH } from "@/lib/constants";
+import { siteConfig } from "@/lib/site";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border" aria-label="Site footer">
       <div
         style={{ maxWidth: PAGE_MAX_WIDTH }}
-        className="mx-auto flex flex-col items-start justify-between gap-4 px-6 py-10 text-[11px] tracking-[0.18em] text-muted sm:flex-row sm:items-center lg:px-10"
+        className="mx-auto px-6 py-12 lg:px-10"
       >
-        <p>SURGICALDATAOS</p>
-        <p className="normal-case tracking-normal text-muted/80">
-          A framework for structured representation of cataract surgical
-          knowledge.
-        </p>
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <p className="text-[11px] font-medium tracking-[0.22em] text-foreground">
+              {siteConfig.name.toUpperCase()}
+            </p>
+            <p className="mt-3 max-w-sm text-[13px] leading-relaxed text-muted">
+              {siteConfig.tagline}
+            </p>
+          </div>
+
+          <nav aria-label="Footer navigation">
+            <ul className="grid grid-cols-2 gap-x-10 gap-y-3 sm:grid-cols-3">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-[12px] text-muted transition-colors hover:text-foreground/90"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-8 text-[11px] text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {year} {siteConfig.name}. All rights reserved.</p>
+          <p className="normal-case tracking-normal">
+            Structured surgical knowledge for AI, robotics, simulation and
+            research.
+          </p>
+        </div>
       </div>
     </footer>
   );

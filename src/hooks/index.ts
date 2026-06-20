@@ -1,1 +1,1 @@
-// Custom React hooks will be exported from here.
+export { useReducedMotion } from "./use-reduced-motion";

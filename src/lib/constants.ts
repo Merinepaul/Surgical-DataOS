@@ -79,13 +79,18 @@ export const REPRESENTATION_STANDARDS = [
   {
     number: "01",
     title: "Anatomical Representation",
-    items: [" Identity", "State", "Tissue Characteristics", "Spatial Relationships"],
+    items: [
+      "Identity",
+      "State",
+      "Tissue Characteristics",
+      "Spatial Relationships",
+    ],
   },
   {
     number: "02",
     title: "Instrument Representation",
     items: [
-      " Identity",
+      "Identity",
       "Function",
       "Activity",
       "Instrument–Anatomy Interaction",
@@ -96,7 +101,7 @@ export const REPRESENTATION_STANDARDS = [
     number: "03",
     title: "Procedural Representation",
     items: [
-      " Surgical Stages",
+      "Surgical Stages",
       "Procedural States",
       "Stage Transitions",
       "Planned Variations",
@@ -107,7 +112,7 @@ export const REPRESENTATION_STANDARDS = [
     number: "04",
     title: "Clinical Event Representation",
     items: [
-      " Pre-existing Conditions",
+      "Pre-existing Conditions",
       "Intraoperative Findings",
       "Complications",
       "Surgical Responses",
