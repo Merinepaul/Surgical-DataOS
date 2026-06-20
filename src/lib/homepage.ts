@@ -1,11 +1,11 @@
 export const HOMEPAGE = {
   hero: {
-    headline: "Teaching AI What Surgeons Know",
+    headline: "The Missing Knowledge Layer for Surgical AI",
     subheading:
-      "SurgicalDataOS is a computational framework for representing surgical knowledge beyond video, enabling the next generation of surgical AI, simulation and robotics.",
-    primaryCta: { label: "Explore the Framework", href: "#knowledge-model" },
+      "SurgicalDataOS converts operative video into structured computational knowledge for AI, robotics, simulation and research.",
+    primaryCta: { label: "Explore the Knowledge Model", href: "#knowledge-model" },
     secondaryCta: {
-      label: "View Interactive Demonstration",
+      label: "Watch 60-second Overview",
       href: "#standards",
     },
   },
